@@ -1,24 +1,58 @@
 {
-  "name": "vue-scichart",
-  "version": "0.1.0",
-  "private": true,
+  "name": "vue-scichart-example",
+  "version": "0.1.11",
+  "description": "Vue.js wrapper for Scichart",
+  "main": "dist/vue-scichart.ssr.js",
+  "browser": "dist/vue-scichart.esm.js",
+  "module": "dist/vue-scichart.esm.js",
+  "unpkg": "dist/vue-scichart.min.js",
+  "author": "Pedro Cruz <me@pedropcruz.pt>",
+  "license": "MIT",
+  "maintainers": [
+    {
+      "name": "Pedro Cruz",
+      "email": "me@pedropcruz.pt",
+      "web": "https://www.pedropcruz.pt"
+    }
+  ],
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife"
   },
+  "files": [
+    "dist/*"
+  ],
   "dependencies": {
     "core-js": "^3.6.5",
+    "scichart": "^1.0.1334",
     "vue": "^2.6.11"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@rollup/plugin-alias": "^2.2.0",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-replace": "^2.3.2",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "copy-webpack-plugin": "^6.4.1",
+    "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "minimist": "^1.2.5",
+    "rollup": "^2.7.3",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-copy": "^3.3.0",
+    "rollup-plugin-terser": "^5.3.0",
+    "rollup-plugin-vue": "^5.1.6",
+    "vue-template-compiler": "^2.6.11",
+    "write-file-webpack-plugin": "^4.5.1"
   },
   "eslintConfig": {
     "root": true,
@@ -33,10 +67,5 @@
       "parser": "babel-eslint"
     },
     "rules": {}
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  }
 }
