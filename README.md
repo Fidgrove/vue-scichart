@@ -5,20 +5,10 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## 🤝 Contributing
+We are a community effort, and everybody is most welcome to participate!
 
-### Compiles and minifies for production
-```
-npm run build
-```
+Be it filing bugs, formulating enhancements, creating pull requests, or any other means of contribution, we encourage contributions from everyone.
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 📝 License
+Distributed under the MIT license.
