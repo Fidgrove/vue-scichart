@@ -6,7 +6,7 @@ module.exports = {
       { text: 'Home', link: '/content/docs/' },
       {
         text: 'Github',
-        link: 'https://github.com/pedropcruz/vue-scichart',
+        link: 'https://github.com/Fidgrove/vue-scichart',
         target: '_blank',
       },
     ],

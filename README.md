@@ -1,14 +1,16 @@
-# vue-scichart
+# [vue-scichart](https://vigilant-varahamihira-acef60.netlify.app/)
+
+<p align="center">
+  <img src="docs/.vuepress/public/img/vue-scichart_logo.svg" alt="Logo" width="400" height="200">
+</p>
+
+![npm_version](https://img.shields.io/npm/v/vue-scichart/latest?label=npm&style=flat-square) ![minified](https://img.shields.io/bundlephobia/min/vue-scichart?label=minified&style=flat-square) ![license](https://img.shields.io/npm/l/vue-scichart?style=flat-square) ![collaborators](https://img.shields.io/npm/collaborators/vue-scichart?label=collaborators&style=flat-square)
 
 Vue plugin for using Scichart
 
 # Why sould I use it?
 
 This plugin isn't just a wrapper of the Scichart API, but provides a better solution on importing modules you need to use in certain charts and have a faster option method you can just pass and you done need to create.
-
-# Requirements
-
-Vue ^2.0.0
 
 # Install
 
