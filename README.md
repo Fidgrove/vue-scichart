@@ -2,7 +2,7 @@
 
 Vue plugin for using Scichart
 
-# Why sould I use it?
+# Why should I use it?
 
 This plugin isn't just a wrapper of the Scichart API, but provides a better solution on importing modules you need to use in certain charts and have a faster option method you can just pass and you done need to create.
 
