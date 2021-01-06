@@ -1,23 +1,22 @@
-
 <p align="center">
 <img src="/img/vue-scichart_logo@2x.png" alt="logo" width="400px" style="margin: 6em 0;" />
 </p>
 
 <logo-sponsor />
 
-# vue-scichart
+# **vue-scichart**
 
 Vue plugin for using Scichart
 
-# Why sould I use it?
+## Why should I use it?
 
 This plugin isn't just a wrapper of the Scichart API, but provides a better solution on importing modules you need to use in certain charts and have a faster option method you can just pass and you done need to create.
 
-# Requirements
+## Requirements
 
 Vue ^2.0.0
 
-# Install
+## Install
 
 ```sh
 # npm usage
@@ -27,7 +26,7 @@ npm install vue-scichart --save
 yarn add vue-scichart
 ```
 
-# Usage
+## Usage
 
 vue-scichart can be used as a vue directive from your javascript. **We should pass the key of Scichart** as well. You can use form a ```.env``` file for example.
 
@@ -93,3 +92,51 @@ module.exports = {
   },
 };
 ```
+
+After change our **vue.config.js** file we can on main Vue file, in my case will be on `main.js`
+
+```js
+
+import Vue from 'vue';
+import App from './App.vue';
+import scichart from 'vue-scichart';
+
+Vue.config.productionTip = false;
+
+Vue.use(scichart, {
+  key: process.env.VUE_APP_SCICHART_KEY, // I'm using .env
+});
+
+new Vue({
+  render: (h) => h(App),
+}).$mount('#app');
+
+
+```
+
+After we can use on our component as we need
+
+```vue
+
+<template>
+  <div>
+    <line-chart />
+  </div>
+</template>
+
+<script>
+
+import { LineChart } from 'vue-scichart'
+
+export default {
+  components: {
+    LineChart
+  }
+}
+
+</script>
+
+```
+
+More about which chart we can import and use, check our docs, on [Component Attributes](/content/docs/configs.md)
+

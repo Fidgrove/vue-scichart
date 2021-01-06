@@ -19,7 +19,7 @@ p.sponsored
   padding: 0.6em 1.2em
   border-radius: 16px
   display: inline-block
-  margin: 1em 0 !important
+  margin: 1em 0
   a
     color: #999
   img
