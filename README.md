@@ -91,6 +91,54 @@ module.exports = {
 };
 ```
 
+After change our **vue.config.js** file we can on main Vue file, in my case will be on `main.js`
+
+```js
+
+import Vue from 'vue';
+import App from './App.vue';
+import scichart from 'vue-scichart';
+
+Vue.config.productionTip = false;
+
+Vue.use(scichart, {
+  key: process.env.VUE_APP_SCICHART_KEY, // I'm using .env
+});
+
+new Vue({
+  render: (h) => h(App),
+}).$mount('#app');
+
+
+```
+
+After we can use on our component as we need
+
+```vue
+
+<template>
+  <div>
+    <line-chart />
+  </div>
+</template>
+
+<script>
+
+import { LineChart } from 'vue-scichart'
+
+export default {
+  components: {
+    LineChart
+  }
+}
+
+</script>
+
+```
+
+More about which chart we can import and use, check our docs, on [Component Attributes](https://vigilant-varahamihira-acef60.netlify.app/content/docs/configs.html)
+
+
 ## 🤝 Contributing
 We are a community effort, and everybody is most welcome to participate!
 
