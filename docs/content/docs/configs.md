@@ -71,7 +71,7 @@ export default {
 - Default: `['line', 'column', 'band', 'bubble', 'ohlc', 'heatmap', 'mountain','scatter', 'stackedMountain']`
 - Required: true
 
-The `type` will be very important, with this we will know which dataseries we will user for rendering our chart.
+The `type` will be very important, with this we will draw the chart by his type and where we going to store our data. Better explanation [here](https://www.scichart.com/documentation/js/current/webframe.html#Tutorial%2002%20-%20Adding%20Series%20and%20Data.html)
 
 ::: warning TODO
 
@@ -141,12 +141,5 @@ export default {
 </script>
 
 ```
-## **Options**
 
-::: tip TODO
-
-TODO
-
-:::
-
-
+Next page we will explain how we pass options on our component

@@ -19,10 +19,10 @@ Vue ^2.0.0
 ## Install
 
 ```sh
-# npm usage
+# npm
 npm install vue-scichart --save
 
-# yarn usage
+# yarn
 yarn add vue-scichart
 ```
 
