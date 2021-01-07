@@ -9,16 +9,16 @@ module.exports = {
     editLinks: true,
     repoLabel: 'Contribute',
     lastUpdated: 'Last Updated',
+    editLinkText: 'Help us improve this page!',
     smoothScroll: true,
     sidebar: [
       {
         title: 'Introduction',
         path: '/content/docs/',
         collapsable: false,
-        children: ['/content/docs/configs'],
+        children: ['/content/docs/configs', '/content/docs/options'],
       },
     ],
-    sidebarDepth: 3,
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Guide', link: '/content/docs/' },
