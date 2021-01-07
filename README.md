@@ -4,7 +4,7 @@
   <img src="docs/.vuepress/public/img/vue-scichart_logo.svg" alt="Logo" width="400" height="200">
 </p>
 
-![npm_version](https://img.shields.io/npm/v/vue-scichart/latest?label=npm&style=flat-square) ![minified](https://img.shields.io/bundlephobia/min/vue-scichart?label=minified&style=flat-square) ![license](https://img.shields.io/npm/l/vue-scichart?style=flat-square) ![collaborators](https://img.shields.io/npm/collaborators/vue-scichart?label=collaborators&style=flat-square)
+[![npm_version](https://img.shields.io/npm/v/vue-scichart/latest?label=npm&style=flat-square)](https://www.npmjs.com/package/vue-scichart) ![minified](https://img.shields.io/bundlephobia/min/vue-scichart?label=minified&style=flat-square) ![license](https://img.shields.io/npm/l/vue-scichart?style=flat-square) ![collaborators](https://img.shields.io/npm/collaborators/vue-scichart?label=collaborators&style=flat-square)
 
 Vue plugin for using Scichart
 
@@ -17,10 +17,10 @@ This plugin isn't just a wrapper of the Scichart API, but provides a better solu
 # :electric_plug: Install
 
 ```powershell
-# npm usage
+# npm
 npm install vue-scichart --save
 
-# yarn usage
+# yarn
 yarn add vue-scichart
 ```
 
