@@ -1,4 +1,4 @@
-# [vue-scichart](https://vigilant-varahamihira-acef60.netlify.app/)
+# [vue-scichart](https://vue-scichart.netlify.app/)
 
 <p align="center">
   <img src="docs/.vuepress/public/img/vue-scichart_logo.svg" alt="Logo" width="400" height="200">
@@ -8,7 +8,7 @@
 
 Vue plugin for using Scichart
 
-[Docs](https://vigilant-varahamihira-acef60.netlify.app/)
+[Docs](https://vue-scichart.netlify.app/)
 
 # :question: Why sould I use it?
 
@@ -136,7 +136,7 @@ export default {
 
 ```
 
-More about which chart we can import and use, check our docs, on [Component Attributes](https://vigilant-varahamihira-acef60.netlify.app/content/docs/configs.html)
+More about which chart we can import and use, check our docs, on [Component Attributes](https://vue-scichart.netlify.app/content/docs/configs.html)
 
 
 ## 🤝 Contributing
