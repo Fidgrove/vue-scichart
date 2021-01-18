@@ -28,7 +28,7 @@ yarn add vue-scichart
 
 ## Usage
 
-vue-scichart can be used as a vue directive from your javascript. **We should pass the key of Scichart** as well. You can use form a ```.env``` file for example.
+vue-scichart can be used as a vue directive from your javascript. **We should pass the key of Scichart** as well. You can use form a `.env` file for example.
 
 ```js{4-6,8}
 import Vue from 'vue'
