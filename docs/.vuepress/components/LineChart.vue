@@ -1,9 +1,3 @@
----
-sidebarDepth: 3
-title: Line Chart
----
-
-```vue
 <template>
   <div class="container">
     <h2>Simple Line Chart</h2>
@@ -20,7 +14,7 @@ title: Line Chart
 </template>
 
 <script>
-import { LineChart } from 'vue-scichart';
+import { LineChart } from '../../../src';
 
 export default {
   components: {
@@ -75,4 +69,3 @@ export default {
   },
 };
 </script>
-```

@@ -25,6 +25,8 @@ This is on continuous development, if you not see the chart you need, you can co
 - [ScatterChart](https://demo.scichart.com/javascript-scatter-chart)
 - [StackedMountainChart](https://demo.scichart.com/javascript-stacked-mountain-chart)
 
+You can check how to implement each one on [Chart Examples Dropdown on Sidebar](examples/LineChart)
+
 
 ## **Chart-id**
 
