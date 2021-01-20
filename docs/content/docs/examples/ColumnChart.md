@@ -20,7 +20,7 @@ title: Column Chart
 </template>
 
 <script>
-import { ColumnChart } from '../../SciChart'
+import { ColumnChart } from 'vue-scichart'
 
 export default {
 	name: 'ColumnChartExample',
