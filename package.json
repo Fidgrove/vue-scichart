@@ -30,7 +30,6 @@
     "dist/*"
   ],
   "dependencies": {
-    "core-js": "^3.8.3",
     "scichart": "^1.1.1375",
     "vue": "^2.6.11"
   },
@@ -49,7 +48,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "minimist": "^1.2.5",
-    "rollup": "^2.37.0",
+    "rollup": "^2.37.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-terser": "^5.3.0",
