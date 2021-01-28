@@ -1,6 +1,6 @@
 import { FastLineRenderableSeries } from 'scichart/Charting/Visuals/RenderableSeries/FastLineRenderableSeries';
 
-import BaseChart from './utils';
+import BaseChart from './utils/index';
 import { createGradient } from './utils/palette-factory';
 
 export default {
