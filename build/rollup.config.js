@@ -7,7 +7,6 @@ import commonjs from '@rollup/plugin-commonjs';
 import replace from '@rollup/plugin-replace';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
-import copy from 'rollup-plugin-copy';
 import minimist from 'minimist';
 
 // Get browserslist config and remove ie from es build targets
@@ -30,19 +29,6 @@ const baseConfig = {
         entries: {
           '@': path.resolve(projectRoot, 'src'),
         },
-      }),
-      copy({
-        targets: [
-          {
-            src: 'node_modules/scichart/_wasm/scichart2d.data',
-            dest: 'dist',
-          },
-          {
-            src: 'node_modules/scichart/_wasm/scichart2d.wasm',
-            dest: 'dist',
-          },
-        ],
-        hook: 'writeBundle',
       }),
     ],
     replace: {
@@ -68,6 +54,7 @@ const external = [
   // list external dependencies, exactly the way it is written in the import statement.
   // eg. 'jquery'
   'vue',
+  'scichart',
 ];
 
 // UMD/IIFE shared settings: output.globals
@@ -108,38 +95,14 @@ if (!argv.format || argv.format === 'es') {
         ],
       }),
       commonjs(),
+      terser({
+        output: {
+          ecma: 5,
+        },
+      }),
     ],
   };
   buildFormats.push(esConfig);
-}
-
-if (!argv.format || argv.format === 'cjs') {
-  const umdConfig = {
-    ...baseConfig,
-    external,
-    output: {
-      compact: true,
-      file: 'dist/vue-scichart.ssr.js',
-      format: 'cjs',
-      name: 'VueScichart',
-      exports: 'named',
-      globals,
-    },
-    plugins: [
-      replace(baseConfig.plugins.replace),
-      ...baseConfig.plugins.preVue,
-      vue({
-        ...baseConfig.plugins.vue,
-        template: {
-          ...baseConfig.plugins.vue.template,
-          optimizeSSR: true,
-        },
-      }),
-      babel(baseConfig.plugins.babel),
-      commonjs(),
-    ],
-  };
-  buildFormats.push(umdConfig);
 }
 
 if (!argv.format || argv.format === 'iife') {
