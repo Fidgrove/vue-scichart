@@ -35,7 +35,7 @@
     "nuxt/**/*"
   ],
   "dependencies": {
-    "scichart": "^1.1.1375",
+    "scichart": "^1.1.1385",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -44,16 +44,16 @@
     "@rollup/plugin-alias": "^2.2.0",
     "@rollup/plugin-commonjs": "^11.1.0",
     "@rollup/plugin-replace": "^2.3.2",
-    "@vue/cli-plugin-babel": "^4.5.10",
-    "@vue/cli-plugin-eslint": "^4.5.10",
-    "@vue/cli-service": "^4.5.10",
+    "@vue/cli-plugin-babel": "^4.5.11",
+    "@vue/cli-plugin-eslint": "^4.5.11",
+    "@vue/cli-service": "^4.5.11",
     "babel-eslint": "^10.1.0",
     "copy-webpack-plugin": "^6.4.1",
     "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
     "minimist": "^1.2.5",
-    "rollup": "^2.37.1",
+    "rollup": "^2.38.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-copy": "^3.3.0",
     "rollup-plugin-node-resolve": "^5.2.0",

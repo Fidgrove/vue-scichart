@@ -33,16 +33,22 @@ module.exports = function module(moduleOptions) {
     })
   );
 
+  // TODO: Need to import .data/.wasm and check js for 2d and 3d
+
   this.extendBuild((config) => {
-    config.module.rules.push({
-      test: /\.data$/,
-      loader: 'file-loader',
-    });
-    config.module.rules.push({
-      test: /\.wasm$/,
-      type: 'javascript/auto',
-      loader: 'file-loader',
-    });
+    config.module.rules.push(
+      ...[
+        {
+          test: /\.data$/,
+          loader: 'file-loader',
+        },
+        {
+          test: /\.wasm$/,
+          type: 'javascript/auto',
+          loader: 'file-loader',
+        },
+      ]
+    );
 
     config.resolve.alias['../../_wasm/scichart2d$'] = path.resolve(
       rootDir,
