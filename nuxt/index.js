@@ -2,8 +2,8 @@ import * as path from 'path';
 import { readFileSync, writeFileSync } from 'fs';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
 
-module.exports = function module(moduleOptions) {
-  const options = this.options.key || moduleOptions;
+module.exports = async function module(moduleOptions) {
+  const options = this.options.scichart || moduleOptions;
 
   const {
     rootDir,
@@ -36,19 +36,11 @@ module.exports = function module(moduleOptions) {
   // TODO: Need to import .data/.wasm and check js for 2d and 3d
 
   this.extendBuild((config) => {
-    config.module.rules.push(
-      ...[
-        {
-          test: /\.data$/,
-          loader: 'file-loader',
-        },
-        {
-          test: /\.wasm$/,
-          type: 'javascript/auto',
-          loader: 'file-loader',
-        },
-      ]
-    );
+    config.module.rules.push({
+      test: /\.wasm$/,
+      type: 'javascript/auto',
+      loader: 'file-loader',
+    });
 
     config.resolve.alias['../../_wasm/scichart2d$'] = path.resolve(
       rootDir,
@@ -59,15 +51,8 @@ module.exports = function module(moduleOptions) {
     );
   });
 
-  this.nuxt.hook('render:setupMiddleware', () => {
-    this.nuxt.server.useMiddleware({
-      path: fileName,
-      handler(req, res) {
-        res.setHeader('Content-Type', 'application/octet-stream');
-        res.end(endFile);
-      },
-    });
-  });
+  const middleware = require('./middleware.js')({ '2dData': endFile });
+  this.addServerMiddleware(middleware);
 
   this.nuxt.hook('generate:done', async () => {
     const generateFilePath = path.resolve(generateDir, fileName);
