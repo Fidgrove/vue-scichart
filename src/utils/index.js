@@ -1,4 +1,9 @@
+import { SciChartVerticalGroup } from 'scichart/Charting/LayoutManager/SciChartVerticalGroup';
 import { SciChartSurface } from 'scichart/Charting/Visuals/SciChartSurface';
+import { SciChartJSDarkTheme } from 'scichart/Charting/Themes/SciChartJSDarkTheme';
+import { SciChartJSLightTheme } from 'scichart/Charting/Themes/SciChartJSLightTheme';
+
+import { FastColumnRenderableSeries } from 'scichart/Charting/Visuals/RenderableSeries/FastColumnRenderableSeries';
 
 import setAxes from './parsers';
 import setDataSeries from './data-series';
@@ -38,6 +43,10 @@ export default {
     chartId: {
       type: String,
       default: '',
+    },
+    theme: {
+      type: String,
+      default: 'dark',
     },
     type: {
       type: String,
@@ -102,6 +111,10 @@ export default {
         this.chartId
       );
 
+      this.applyTheme(sciChartSurface);
+      if (this.mergedOptions.scichartBackground)
+        sciChartSurface.background = this.mergedOptions.scichartBackground;
+
       // Create X and Y Axis and added to the chart
       this.$data._xAxes = await setAxes(
         wasmContext,
@@ -126,7 +139,19 @@ export default {
         this.$emit('init');
       }
     },
-
+    applyTheme(sciChartSurface) {
+      switch (this.theme) {
+        case 'dark':
+          sciChartSurface.applyTheme(new SciChartJSDarkTheme());
+          break;
+        case 'light':
+          sciChartSurface.applyTheme(new SciChartJSLightTheme());
+          break;
+        default:
+          sciChartSurface.applyTheme(new SciChartJSDarkTheme());
+          break;
+      }
+    },
     async setOptions(newOpts = null) {
       const { _wasmContext, _chart } = this.$data;
       const opts = newOpts || this.mergedOptions;
@@ -141,12 +166,9 @@ export default {
 
     async getDataSeries(type, opts = {}) {
       type = type || this.$props.type;
-      if (!type) throw new Error('Please provide a Chart Type');
-      return await setDataSeries(
-        type,
-        this.$data._wasmContext,
-        opts.dataSeries
-      );
+      if (!type)
+        throw new Error('[vue-scichart] - Please provide a Chart Type');
+      return await setDataSeries(type, this.$data._wasmContext, opts);
     },
 
     async setDataSeries(opts = {}, wasmContext, type = '') {
@@ -155,6 +177,10 @@ export default {
         wasmContext || this.$data._wasmContext,
         opts.dataSeries
       );
+    },
+
+    setVerticalGroup() {
+      return new SciChartVerticalGroup();
     },
 
     appendData(...args) {
@@ -183,6 +209,10 @@ export default {
 
     zoomExtents() {
       this.$data._chart.zoomExtents();
+    },
+
+    setColumnChart(opts = {}) {
+      return new FastColumnRenderableSeries(this.$data._wasmContext, opts);
     },
   },
 

@@ -20,7 +20,7 @@
     }
   ],
   "scripts": {
-    "dev": "vue-cli-service serve",
+    "dev": "watch 'npm run build' src/",
     "lint": "vue-cli-service lint",
     "dev:docs": "vuepress dev docs",
     "build:docs": "vuepress build docs",
@@ -61,6 +61,7 @@
     "rollup-plugin-vue": "^6.0.0",
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.7.1",
+    "watch": "^1.0.2",
     "write-file-webpack-plugin": "^4.5.1"
   },
   "eslintConfig": {
