@@ -1,6 +1,6 @@
 {
   "name": "vue-scichart",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Vue.js wrapper for Scichart",
   "main": "dist/vue-scichart.esm.js",
   "browser": "dist/vue-scichart.esm.js",
