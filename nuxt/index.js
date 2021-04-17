@@ -14,7 +14,7 @@ module.exports = async function module(moduleOptions) {
 
   const sourceDir = path.join(
     rootDir,
-    '/node_modules/vue-scichart/node_modules/scichart/_wasm/scichart2d.data'
+    '/node_modules/scichart/_wasm/scichart2d.data'
   );
 
   const endFile = readFileSync(sourceDir);
@@ -25,7 +25,7 @@ module.exports = async function module(moduleOptions) {
         {
           from: path.join(
             rootDir,
-            'node_modules/vue-scichart/node_modules/scichart/_wasm/scichart2d.wasm'
+            '/node_modules/scichart/_wasm/scichart2d.wasm'
           ),
           to: '',
         },
@@ -44,8 +44,6 @@ module.exports = async function module(moduleOptions) {
 
     config.resolve.alias['../../_wasm/scichart2d$'] = path.resolve(
       rootDir,
-      'node_modules',
-      'vue-scichart',
       'node_modules',
       'scichart',
       '_wasm',
