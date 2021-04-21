@@ -111,9 +111,10 @@ export default {
         this.chartId
       );
 
-      this.applyTheme(sciChartSurface);
-      if (this.mergedOptions.scichartBackground)
-        sciChartSurface.background = this.mergedOptions.scichartBackground;
+      this.applyTheme(sciChartSurface, this.mergedOptions.customTheme);
+
+      if (this.mergedOptions.customTheme.background)
+        sciChartSurface.background = this.mergedOptions.customTheme.background;
 
       // Create X and Y Axis and added to the chart
       this.$data._xAxes = await setAxes(
@@ -139,16 +140,20 @@ export default {
         this.$emit('init');
       }
     },
-    applyTheme(sciChartSurface) {
+    applyTheme(sciChartSurface, opts) {
       switch (this.theme) {
         case 'dark':
-          sciChartSurface.applyTheme(new SciChartJSDarkTheme());
+          sciChartSurface.applyTheme({ ...new SciChartJSDarkTheme(), ...opts });
           break;
         case 'light':
-          sciChartSurface.applyTheme(new SciChartJSLightTheme());
+          console.log('opts', opts);
+          sciChartSurface.applyTheme({
+            ...new SciChartJSLightTheme(),
+            ...opts,
+          });
           break;
         default:
-          sciChartSurface.applyTheme(new SciChartJSDarkTheme());
+          sciChartSurface.applyTheme(opts);
           break;
       }
     },
