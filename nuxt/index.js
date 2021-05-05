@@ -10,10 +10,7 @@ module.exports = async function module(moduleOptions) {
     generate: { dir: generateDir },
   } = this.nuxt.options;
 
-  const filePath =
-    process.env.NODE_ENV === 'development'
-      ? '/node_modules/vue-scichart/node_modules/scichart/_wasm/'
-      : '/node_modules/scichart/_wasm/';
+  const filePath = '/node_modules/scichart/_wasm/';
 
   const fileName = 'scichart2d.data';
 
