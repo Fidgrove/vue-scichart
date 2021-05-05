@@ -101,20 +101,13 @@ export default {
   },
   methods: {
     async init(init = true) {
-      if (this.$scichart.key) {
-        SciChartSurface.setRuntimeLicenseKey(this.$scichart.key);
-      } else {
-        throw new Error('Need SciChart Key to generate the graphic.');
-      }
+      SciChartSurface.setRuntimeLicenseKey(this.$scichart.key);
 
       const { sciChartSurface, wasmContext } = await SciChartSurface.create(
         this.chartId
       );
 
       this.applyTheme(sciChartSurface, this.mergedOptions.customTheme);
-
-      if (this.mergedOptions.customTheme.background)
-        sciChartSurface.background = this.mergedOptions.customTheme.background;
 
       // Create X and Y Axis and added to the chart
       this.$data._xAxes = await setAxes(
@@ -146,7 +139,6 @@ export default {
           sciChartSurface.applyTheme({ ...new SciChartJSDarkTheme(), ...opts });
           break;
         case 'light':
-          console.log('opts', opts);
           sciChartSurface.applyTheme({
             ...new SciChartJSLightTheme(),
             ...opts,

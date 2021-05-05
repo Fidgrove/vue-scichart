@@ -7,8 +7,9 @@
   "module": "dist/vue-scichart.esm.js",
   "unpkg": "dist/vue-scichart.min.js",
   "author": "Pedro Cruz <me@pedropcruz.pt>",
+  "homepage": "https://vue-scichart.netlify.app/",
   "license": "MIT",
-  "maintainers": [
+  "contributors": [
     {
       "name": "Pedro Cruz",
       "email": "me@pedropcruz.pt",
@@ -19,6 +20,7 @@
       "email": "joao.petinga@gmail.com"
     }
   ],
+  "repository": "https://github.com/Fidgrove/vue-scichart",
   "scripts": {
     "dev": "watch 'npm run build' src/",
     "lint": "vue-cli-service lint",
