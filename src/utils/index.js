@@ -156,7 +156,11 @@ export default {
       await this.setDataSeries(opts, _wasmContext);
       setAnnotations(opts, _chart);
 
-      const chartModifiers = setChartModifiers(opts, _chart, _wasmContext);
+      const chartModifiers = await setChartModifiers(
+        opts,
+        _chart,
+        _wasmContext
+      );
 
       return chartModifiers;
     },

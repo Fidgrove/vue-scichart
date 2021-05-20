@@ -42,11 +42,11 @@ export const importedModifiers = {
  * @param  {} opts
  */
 
-async function setOptions(opts) {
+function setOptions(opts) {
   if (!opts) return;
 
   if (opts.xyDirection) {
-    opts = { ...opts, xyDirection: await EXyDirection[opts.xyDirection] };
+    opts = { ...opts, xyDirection: EXyDirection[opts.xyDirection] };
   }
 
   return opts;
