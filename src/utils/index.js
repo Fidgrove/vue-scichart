@@ -101,6 +101,7 @@ export default {
   },
   methods: {
     async init(init = true) {
+      console.log('scichart key -->', this.$scichart.key);
       SciChartSurface.setRuntimeLicenseKey(this.$scichart.key);
 
       const { sciChartSurface, wasmContext } = await SciChartSurface.create(
