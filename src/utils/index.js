@@ -188,8 +188,8 @@ export default {
       this.$data._dataSeries.append(...args);
     },
 
-    appendRangeData(xArray, yArray) {
-      this.$data._dataSeries.appendRange(xArray, yArray);
+    appendRangeData(...args) {
+      this.$data._dataSeries.appendRange(...args);
     },
 
     addModifier(modifier) {

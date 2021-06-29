@@ -37,7 +37,7 @@
     "nuxt/**/*"
   ],
   "dependencies": {
-    "scichart": "^1.4.1595",
+    "scichart": "^1.4.1615",
     "vue": "^2.6.11"
   },
   "devDependencies": {
