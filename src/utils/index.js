@@ -9,6 +9,7 @@ import setAxes from './parsers';
 import setDataSeries from './data-series';
 import setChartModifiers from './chart-modifier';
 import setAnnotations from './annotations';
+import { NumberRange } from 'scichart/Core/NumberRange';
 
 const _options = {
   modifiers: {},
@@ -190,6 +191,10 @@ export default {
 
     appendRangeData(...args) {
       this.$data._dataSeries.appendRange(...args);
+    },
+
+    updateVisibleAxes(Axis, prop, arr) {
+      Axis[prop] = new NumberRange(...arr);
     },
 
     addModifier(modifier) {

@@ -63,6 +63,13 @@ async function parserAxesOptions(opts) {
     opts = { ...opts, visibleRange: await setNumberRange(opts.visibleRange) };
   }
 
+  if (opts.visibleRangeLimit) {
+    opts = {
+      ...opts,
+      visibleRangeLimit: await setNumberRange(opts.visibleRangeLimit),
+    };
+  }
+
   if (opts.axisAlignment) {
     opts = { ...opts, axisAlignment: await setAlignment(opts.axisAlignment) };
   }
